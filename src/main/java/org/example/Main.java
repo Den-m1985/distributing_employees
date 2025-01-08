@@ -2,6 +2,7 @@ package org.example;
 
 import org.apache.poi.ss.usermodel.Workbook;
 import org.example.readExel.open_file.OpenExcelFile;
+import org.example.service.GetDataFromExcel;
 import org.example.service.ProductionSimulator;
 import java.io.File;
 
@@ -11,6 +12,8 @@ public class Main {
         String extension = "xlsx";
         Workbook workbook = new OpenExcelFile().openFile(extension, defaultPath);
 
-        new ProductionSimulator(workbook).simulate(defaultPath + File.separator + "test.csv");
+        GetDataFromExcel dataFromExcel = new  GetDataFromExcel(workbook);
+
+        new ProductionSimulator(dataFromExcel).simulate(defaultPath + File.separator + "test.csv");
     }
 }

@@ -17,8 +17,8 @@ import java.util.List;
 public class ProductionSimulator {
     private final GetDataFromExcel dataFromExcel;
 
-    public ProductionSimulator(Workbook workbook) {
-        dataFromExcel = new GetDataFromExcel(workbook);
+    public ProductionSimulator(GetDataFromExcel dataFromExcel) {
+        this.dataFromExcel = dataFromExcel;
     }
 
     public void simulate(String outputCsvPath) {
